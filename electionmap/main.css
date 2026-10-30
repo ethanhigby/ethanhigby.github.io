@@ -1,3 +1,57 @@
+/* Election results article template
+   Single typeface (Newsreader, designed for reading on screens) with
+   Georgia as the fallback if the font can't load. */
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&display=swap");
+
+:root {
+  --ink: #16202a;        /* body text and headline */
+  --muted: #4d5963;      /* opening paragraph */
+  --masthead: #0c3b3f;   /* deep teal nameplate bar */
+  --signal: #e0a526;     /* gold rule under the nameplate */
+  --paper: #ffffff;
+
+  --measure: 40rem;      /* width of the text column */
+  --gutter: clamp(1.25rem, 5vw, 2rem);
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  line-height: 1.65;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Nameplate: full-width bar, text lines up with the article column */
+.article-header {
+  padding: 1.1rem max(var(--gutter), calc((100% - var(--measure)) / 2));
+  background: var(--masthead);
+  border-bottom: 5px solid var(--signal);
+  color: #fff;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Article column */
+.article-container {
+  max-width: calc(var(--measure) + 2 * var(--gutter));
   margin: 0 auto;
   padding: 0 var(--gutter) 4rem;
 }
@@ -53,3 +107,4 @@ a:focus-visible {
   width: 100%;
   height: auto;
   margin: 2.25rem 0;
+}
