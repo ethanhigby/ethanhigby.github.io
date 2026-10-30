@@ -1,1 +1,55 @@
+  margin: 0 auto;
+  padding: 0 var(--gutter) 4rem;
+}
 
+h1 {
+  margin: 2.5rem 0 1.25rem;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0 0 1.25em;
+}
+
+/* The paragraph right after the headline reads as the summary */
+.article-container > h1 + p {
+  margin-bottom: 1.75rem;
+  color: var(--muted);
+  font-size: 1.4rem;
+  line-height: 1.45;
+}
+
+a {
+  color: var(--masthead);
+  text-underline-offset: 0.15em;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 2px;
+}
+
+/* Embedded content (maps, charts, videos, images) is always exactly as
+   wide as the article text. !important is needed because embed codes
+   such as Datawrapper's set their width inline. */
+.article-container iframe,
+.article-container embed,
+.article-container object,
+.article-container video {
+  display: block;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  margin: 2.25rem 0;
+  border: 0;
+}
+
+.article-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 2.25rem 0;
